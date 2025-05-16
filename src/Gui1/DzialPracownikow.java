@@ -22,7 +22,9 @@ public class DzialPracownikow {
         zajeteNazwy.add(nazwaDzialu);
         dzialy.add(this);
     }
-
+//"Obiekt klasy Dzial Pracowników
+//można utworzyć tylko za pomocą metody “createDzial”, która będzie przyjmowała
+//odpowiednie argumenty tak aby zwracała obiekt o typie Dział."
     public static DzialPracownikow createDzial(String nazwaDzialu) throws NotUniqueNameException {
         return new DzialPracownikow(nazwaDzialu);
     }
@@ -39,7 +41,7 @@ public class DzialPracownikow {
         pracownicy.add(pracownik);
     }
 
-
+//metoda aby uzyskać informację jacy pracownicy są w dziale
     public List<Pracownik> getPracownicy() {
         return pracownicy;
     }

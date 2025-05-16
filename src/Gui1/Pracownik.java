@@ -13,6 +13,7 @@ public abstract class Pracownik implements Comparable<Pracownik> {
     private DzialPracownikow dzial;
     private static final List<Pracownik> wszyscyPracownicy = new ArrayList<>();
 
+
     public Pracownik(String imie, String nazwisko, LocalDate dataUrodzenia, DzialPracownikow dzial) {
         this.imie = imie;
         this.nazwisko = nazwisko;

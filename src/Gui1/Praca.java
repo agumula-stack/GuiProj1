@@ -19,6 +19,18 @@ public class Praca extends Thread{
     private List<Praca> praceNaKtoreCzekamy;
     private List<Praca> praceDoUruchomieniaPoTej;
 
+    public Praca(rodzajPracy rodzaj, int czasPracySekundy, String opis) {
+        this.id = ++licznik;
+        this.rodzaj = rodzaj;
+        this.czasPracySekundy = czasPracySekundy;
+        this.opis = opis;
+        this.praceNaKtoreCzekamy = new ArrayList<>();
+        this.praceDoUruchomieniaPoTej = new ArrayList<>();
+        wszystkiePrace.put(id, this);
+
+    }
+    //"Konstruktor ma przyjmować rodzaj Pracy, czas, opis oraz kolekcję Prac ( to pole nie jest
+    //wymagane dla każdej pracy)." TU JEST KONSTRUKTOR BEZ TEGO POLA
     public Praca(rodzajPracy rodzaj, int czasPracySekundy, String opis, List<Praca> praceNaKtoreCzekamy) {
         this.id = ++licznik;
         this.rodzaj = rodzaj;
@@ -28,8 +40,34 @@ public class Praca extends Thread{
         this.praceDoUruchomieniaPoTej = new ArrayList<>();
         wszystkiePrace.put(id, this);
     }
+    public void addToPraceNaKtoreCzekamy(Praca praca) {
+        praceNaKtoreCzekamy.add(praca);
+    }
+
+    public void removeFromPraceNaKtoreCzekamy(Praca praca) {
+        praceNaKtoreCzekamy.add(praca);
+    }
+
 
     public List<Praca> getPraceNaKtoreCzekamy() {
         return praceNaKtoreCzekamy;
     }
+
+    public List<Praca> getPraceDoUruchomieniaPoTej() {
+        return praceDoUruchomieniaPoTej;
+    }
+
+    @Override
+    public String toString() {
+        return "Praca{" +
+                "id=" + id +
+                ", rodzaj=" + rodzaj +
+                ", czasPracySekundy=" + czasPracySekundy +
+                ", czyZreazlizowane=" + czyZreazlizowane +
+                ", opis='" + opis + '\'' +
+                ", praceNaKtoreCzekamy=" + praceNaKtoreCzekamy +
+                ", praceDoUruchomieniaPoTej=" + praceDoUruchomieniaPoTej +
+                '}';
+    }
+    //logika nie jest skończona tutaj, nie wyrobiłem się
 }

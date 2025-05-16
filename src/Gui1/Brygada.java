@@ -16,11 +16,13 @@ public class Brygada {
         this.brygadzista = brygadzista;
         this.listaPracownikow = new ArrayList<>();
     }
-
+//metoda poszerzona o zadanie dodatkowe nr.1
     public void dodajPracownikow(Pracownik pracownik) {
-        if (!(pracownik instanceof Brygadzista)) {
-            this.listaPracownikow.add(pracownik);
+        if (pracownik.getClass() == Uzytkownik.class) {
+            System.out.println("Użytkownika nie dodajemy do brygady.");
+            return;
         }
+            this.listaPracownikow.add(pracownik);
     }
 
     public void dodajPracownikow(List<Pracownik> pracownicy) {
@@ -29,13 +31,31 @@ public class Brygada {
         }
     }
 
+    public static int getLicznikBrygad() {
+        return licznikBrygad;
+    }
+
+    public int getNumerBrygady() {
+        return numerBrygady;
+    }
+
+    public String getNazwaBrygady() {
+        return nazwaBrygady;
+    }
+
+    public Brygadzista getBrygadzista() {
+        return brygadzista;
+    }
+
+    public List<Pracownik> getListaPracownikow() {
+        return listaPracownikow;
+    }
+
     @Override
     public String toString() {
         return "Brygada{" +
                 "numerBrygady=" + numerBrygady +
                 ", nazwaBrygady='" + nazwaBrygady + '\'' +
-                ", brygadzista=" + brygadzista +
-                ", listaPracownikow=" + listaPracownikow +
                 '}';
     }
 }

@@ -139,4 +139,18 @@ public class Zlecenie implements Runnable {
         System.out.println("Zlecenie nr. " + id + " zakończone.");
 
     }
+
+    @Override
+    public String toString() {
+        return "Zlecenie{" +
+                "id=" + id +
+                ", prace=" + prace +
+                ", brygada=" + brygada +
+                ", dataUtworzenia=" + dataUtworzenia +
+                ", dataRozpoczecia=" + dataRozpoczecia +
+                ", dataZakonczenia=" + dataZakonczenia +
+                ", rodzaj=" + rodzaj +
+                ", stanZlecenia=" + stanZlecenia +
+                '}';
+    }
 }

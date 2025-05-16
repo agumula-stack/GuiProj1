@@ -42,8 +42,6 @@ public class Brygadzista extends Uzytkownik {
                 ", dział = " + getDzial() +
                 ", login = " + getLogin() +
                 ", inicjał = " + getInicjal() +
-                ", brygady = " + brygady +
-                ", zlecenia = " + zlecenia +
                 '}';
     }
 }
